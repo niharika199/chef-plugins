@@ -1,6 +1,6 @@
 require 'aws-sdk'  # v2: require 'aws-sdk'
 require 'chef/knife'
- class AwsIa < Chef::Knife
+ class AwsIam < Chef::Knife
 banner 'knife aws ia (options)'
 option:opt,
       :short=>'-o option',

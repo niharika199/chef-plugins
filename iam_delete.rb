@@ -31,8 +31,12 @@ def delete_group
 k =@iam.delete_group({
   group_name:@group, # required
 })
+puts "deleted the group #{@group}"
 rescue Aws::IAM::Errors::NoSuchEntity
   puts "group does not exist"
+rescue Aws::IAM::Errors::DeleteConflict
+ puts "Cannot delete the group"
+ puts "to delete the group first remove the users from the group"
 end
 
 
